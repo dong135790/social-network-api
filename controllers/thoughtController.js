@@ -6,13 +6,6 @@ const { User, Thought } = require('../models');
 //     console.log('Number of thoughts: ' + numberofthought)
 //     return numberofthought;
 // }
-//     getAllThoughts,
-//     getSingleThought,
-//     createThought,
-//     updateThought,
-//     deleteThought,
-//     addReaction,
-//     deleteReaction,
 module.exports = {
     // Get all thoughts
     async getAllThoughts(req, res) {
