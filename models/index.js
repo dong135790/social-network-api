@@ -1,3 +1,6 @@
-const Media = require('./media');
+// Basically a bridge file...
 
-module.exports = { Media };
+const User = require('./user');
+const Thought = require('./thought');
+
+module.exports = { User, Thought };
