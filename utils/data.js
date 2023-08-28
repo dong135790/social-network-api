@@ -10,6 +10,17 @@ const emails = [
     'fakeEmail8@gmail.com',
 ];
 
+const usernames = [
+    'user1',
+    'user2',
+    'user3',
+    'user4',
+    'user5',
+    'user6',
+    'user7',
+    'user8',
+    'user9',
+]
 const reactions = [
     'happy',
     'sad',
@@ -56,4 +67,4 @@ const getRandomThought = (int) => {
     return results;
 }
 
-module.exports = {getRandomReaction, getRandomThought}
+module.exports = {emails, usernames, getRandomReaction, getRandomThought}

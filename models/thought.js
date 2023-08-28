@@ -31,7 +31,8 @@ const thoughtSchema = new Schema({
 });
 
 thoughtSchema.virtual('reactionCount').get(function () {
-    return `${this.reactions.length} total reactions`;
+    console.log(`${this.reaction}`)
+    return `${this.reaction.length} total reactions`;
 })
 
 // Creates a model called 'thought' that utilizes the thoughtSchema layout

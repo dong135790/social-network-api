@@ -9,7 +9,7 @@ const userSchema = new Schema({
         unique: true,
         validate: {
             validator: function (data) {
-                return /^[w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(data)
+                return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(data)
             }
         }
     },
@@ -26,28 +26,10 @@ const userSchema = new Schema({
 
 
 userSchema.virtual('friendCount').get(function () {
-    return `${this.friends.length} total friends`;
+    return `${this.friends.length} Friend Count`;
 })
 
 // Create a model named `User`
 const User = model('user', userSchema)
-
-// TODO: Create a new instance of the model including the subdocuments
-const userData = [
-    {
-        name: 'Justin',
-        email: 'Dong135790@gmail.com',
-    },
-    {},
-];
-// An unnamed function that is an expression (since its wrapped in () )
-(async () => {
-    await User.deleteMany({});
-
-    await User
-        .create({ userData })
-        .then(data => console.log(data))
-        .catch(err => console.error(err))
-})
 
 module.exports = User;
